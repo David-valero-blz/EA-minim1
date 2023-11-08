@@ -67,7 +67,7 @@ const StartServer = () => {
     router.use('/chats', chatRoutes);
     router.use('/comments', commentRoutes);
     router.use('/messages', messageRoutes);
-    router.use('/issues', issuesRoutes);
+    router.use('/issues', issueRoutes);
 
     /** Healthcheck */
     router.get('/ping', (req, res, next) => res.status(200).json({ message: 'pong' }));
