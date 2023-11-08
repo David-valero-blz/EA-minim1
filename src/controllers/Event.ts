@@ -44,26 +44,7 @@ const readAll = (req: Request, res: Response, next: NextFunction) => {
         })
         .catch((error) => res.status(500).json({ error }));
 };
-/*
-const updateEvent = (req: Request, res: Response, next: NextFunction) => {
-    const eventId = req.params.eventId;
 
-    return Event.findByIdAndUpdate(eventId)
-        .then((event) => {
-            if (event) {
-                event.set(req.body);
-
-                return event
-                    .save()
-                    .then((event) => res.status(201).json(event))
-                    .catch((error) => res.status(500).json({ error }));
-            } else {
-                return res.status(404).json({ message: 'not found' });
-            }
-        })
-        .catch((error) => res.status(500).json({ error }));
-};
-*/
 const updateEvent = (req: Request, res: Response, next: NextFunction) => {
     const url = req.url;
     console.log(url);
