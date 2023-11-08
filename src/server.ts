@@ -7,7 +7,7 @@ import userRoutes from './routes/User';
 import eventRoutes from './routes/Event';
 import categoryRoutes from './routes/Category';
 import chatRoutes from './routes/Chat';
-import issueRoutes from './routes/issue';
+import issueRoutes from './routes/Issue';
 import commentRoutes from './routes/Comment';
 import messageRoutes from './routes/Message';
 import cors from 'cors';

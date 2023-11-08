@@ -7,6 +7,7 @@ import { IMessage } from '../models/Message';
 import { IChat } from '../models/Chat';
 import { IComment } from '../models/Comment';
 import { ICategory } from '../models/Category';
+import { IIssue } from '../models/Issue';
 
 export const ValidateSchema = (schema: ObjectSchema) => {
     return async (req: Request, res: Response, next: NextFunction) => {
@@ -42,6 +43,20 @@ export const Schemas = {
             createdEventsId: Joi.array().items(Joi.string().optional()),
             joinedEventsId: Joi.array().items(Joi.string().optional()),
             idCategories: Joi.array().items(Joi.string().optional())
+        })
+    },
+    issue: {
+        create: Joi.object<IIssue>({
+            title: Joi.string().required(),
+            description: Joi.string().required(),
+            priority: Joi.date().iso().optional(),
+            status: Joi.string().required(),
+        }),
+        update: Joi.object<IIssue>({
+            title: Joi.string().required(),
+            description: Joi.string().required(),
+            priority: Joi.date().iso().optional(),
+            status: Joi.string().required(),
         })
     },
     event: {
